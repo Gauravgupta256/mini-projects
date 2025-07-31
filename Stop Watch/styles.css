@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    text-align: center;
+    font-family: monospace;
+    background: linear-gradient(to right, #406E8E , #23395B);
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;   
+}
+
+.time {
+    font-size: 3rem;
+    color: #f0f0f0;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.start-btn,
+.stop-btn,
+.reset-btn {
+    padding: 12px 26px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #4CAF50; 
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+    outline: none;
+}
+
+@keyframes bounce {
+    0%,100%{
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.start-btn {
+    background-color: #2C786C;
+}
+
+.stop-btn {
+    background-color: #7D5A5A;
+}
+
+.reset-btn {
+    background-color: #1D70A2;
+    color: #fff;
+}
+
+.start-btn:hover,
+.stop-btn:hover,
+.reset-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn:active,
+.stop-btn:active,
+.reset-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn:focus,
+.stop-btn:focus,
+.reset-btn:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.2);
+    outline-offset: 3px;
+}
