@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+body {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.heart {
+  position: absolute;
+  color: rgba(255, 78, 80, 0.7);
+  font-size: 2rem;
+  animation: floatHearts 6s infinite ease-in-out;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  background: rgba(255, 240, 246, 0.85);
+  /* backdrop-filter: blur(10px); */
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(255, 78, 80, 0.3);
+  text-align: center;
+  border: 2px solid rgba(255, 133, 192, 0.5);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+h2 {
+  color: #ff4e50;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  font-family: "Dancing Script", cursive;
+  text-shadow: 1px 1px 8px rgba(255, 78, 80, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #ff4e50;
+  font-size: 20px;
+}
+
+label {
+  color: #ff4e50;
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #b22222;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  border: 1px solid #ffc0cb;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 10px rgba(255, 78, 80, 0.5);
+  border-color: #ff4e50;
+}
+
+button {
+  background-color: #ff4e50;
+  font-size: 1.1rem;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 78, 80, 0.4);
+}
+
+button:hover {
+  background: #e63e3f;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 78, 80, 0.5);
+}
+
+.loading {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #ff4e50;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.circle {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0.8rem auto;
+  border-radius: 50%; 
+  overflow: hidden; 
+}
+
+.circle svg {
+  width: 90px;
+  height: 90px;
+  transform: rotate(-90deg);
+  display: block;
+}
+
+.circle svg circle {
+  fill: none;
+  stroke-width: 8;
+  stroke: #ffc0cb;
+  stroke-linecap: round;
+}
+
+.circle svg circle:nth-child(2) {
+  stroke: #ff4e50;
+  stroke-dasharray: 283; 
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 1s linear;
+}
+
+#circleText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff4e50;
+}
+
+
+.quote {
+  font-style: italic;
+  color: #b22222;
+  margin-top: 1rem;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#result {
+  margin-top: 1.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: bold;
+  color: #ff4e50;
+  text-shadow: 1px 1px 5px rgba(255, 78, 80, 0.4);
+  transition: opacity 0.5s ease;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+  button {
+    width: 100%;
+  }
+}

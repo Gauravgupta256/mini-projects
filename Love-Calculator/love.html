@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love-Calculator ❤️</title>
+    <link rel="stylesheet" href="love.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>💖 Love Calculator 💖</h2>
+        <p>Enter your names and let's see what destiny says...</p>
+
+        <div class="love-calculator">
+            <label for="name1">Your Name</label>
+            <input type="text" id="name1" placeholder="Enter Your Name">
+
+            <label for="name2">Your Partner's Name</label>
+            <input type="text" id="name2" placeholder="Enter Your Partner's Name">
+
+            <button onclick="calculateLove()">💌 Calculate</button>
+
+            <div id="loading" class="loading" style="display:none;">💭 Analyzing your love...</div>
+
+            <div id="percentageCircle" class="circle" style="display:none;">
+                <svg>
+                    <circle cx="50%" cy="50%" r="45"></circle>
+                    <circle id="progress" cx="50%" cy="50%" r="45"></circle>
+                </svg>
+                <div id="circleText">0%</div>
+            </div>
+
+            <div id="quote" class="quote"></div>
+
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <!-- <audio id="loveMusic" src="./assests/romantic.mp3"></audio> -->
+
+    <script src="love.js"></script>
+</body>
+
+</html>
