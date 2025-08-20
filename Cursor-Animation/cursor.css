@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  cursor: none;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+  animation: fadeIn 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-20px); }
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f5f5f5;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.nav-links li a:hover {
+  color: #f1f4f5;
+  transform: translateY(-4px) scale(1.1);
+}
+
+.cursor, .cursor-follower {
+  position: fixed;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor {
+  width: 12px;
+  height: 12px;
+  background: #00fff7;
+  box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+  transition: transform 0.15s ease-out, background 0.3s;
+}
+
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(0, 255, 247, 0.6);
+  transition: all 0.2s ease-out;
+  mix-blend-mode: difference;
+}
+
+.cursor.click {
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(2); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #00fff7;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+    color: #00fff7;
+}
